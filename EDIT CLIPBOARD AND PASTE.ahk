@@ -54,7 +54,7 @@ if(editSubStringsKeysArr.length > 0){
 /********** Replace single parts of substring(END) **********/
 
 
-A_Clipboard := str_without_suffix                                                                                 ; !!! SET FINAL SUBSTRING !!!
+A_Clipboard := str_without_suffix                                                                           ; !!! SET FINAL SUBSTRING !!!
 
 
 /********** Paste File name **********/
@@ -82,4 +82,3 @@ Sleep sl1
 Send "{Down}"
 Sleep sl1
 Send "{Space}"
-
