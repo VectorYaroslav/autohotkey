@@ -1,4 +1,45 @@
 /********** Set times for Sleep **********/
+slp := 100
+/********** Set times for Sleep(END) **********/
+
+arr := A_Clipboard
+Loop parse, arr, ","
+    {
+        Sleep slp
+        Send "^f"
+        Sleep slp
+        Send "^a"
+        Sleep slp
+        A_Clipboard := A_LoopField
+        Send "^v"
+
+        Sleep slp
+        Send "+{Tab}"
+        Sleep slp
+        Send "+{Tab}"
+        Sleep slp
+        Send "+{Tab}"
+        Sleep slp
+        Send "+{Tab}"
+        Sleep slp
+        Send "{Up}"
+        Sleep slp
+        Send "{Down}"
+        Sleep slp
+        Send "{Space}"
+    }
+
+
+
+
+
+
+
+
+Exit
+
+
+/********** Set times for Sleep **********/
 sl1 := 100
 sl2 := 1000
 /********** Set times for Sleep(END) **********/
@@ -21,7 +62,7 @@ editSubStringsArr := [                                                          
 editSubStringsKeysArr := [1]                                                                                ; Select SUBarrayS(ONE OR MORE) for single replacing  (keys of 'editSubStringsArr')
 
 
-Send "^+c"                                                                                                  ; Copy Path of File name
+Send "^c"                                                                                                  ; Copy Path of File name
 Sleep sl2
 Start_string := A_Clipboard                                                                                 ; Get Clipboard data
 
@@ -57,28 +98,6 @@ if(editSubStringsKeysArr.length > 0){
 A_Clipboard := str_without_suffix                                                                           ; !!! SET FINAL SUBSTRING !!!
 
 
-/********** Paste File name **********/
-Sleep sl1
-Send "!{Tab}"
-Sleep sl1
-Send "^f"
-Sleep sl1
-Send "^a"
-Sleep sl1
-Send "^v"
-/********** Paste File name(END) **********/
 
 
-Send "+{Tab}"
-Sleep sl1
-Send "+{Tab}"
-Sleep sl1
-Send "+{Tab}"
-Sleep sl1
-Send "+{Tab}"
-Sleep sl1
-Send "{Up}"
-Sleep sl1
-Send "{Down}"
-Sleep sl1
-Send "{Space}"
+
